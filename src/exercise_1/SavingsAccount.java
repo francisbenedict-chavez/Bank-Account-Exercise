@@ -5,6 +5,7 @@ public class SavingsAccount extends BankAccount {
 
     public SavingsAccount(String ownerName) {
         this.ownerName = ownerName;
+        System.out.println("Account Owner: " + ownerName);
     }
 
     public String getOwnerName() {
