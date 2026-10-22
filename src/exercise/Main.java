@@ -4,7 +4,7 @@ package exercise;
 public class Main {
   /** Runs test cases for bank account operations. */
   public static void main(String[] args) {
-    // Test Cases for Exercise 1
+    // Exercise 1
     // 1. Create a savings account
     BankAccount acc1 = new SavingsAccount("Test0");
     // 2. Deposit with valid amount
@@ -28,16 +28,16 @@ public class Main {
     acc1.unfreezeAccount();
     acc1.withdraw(100);
 
-    // Test Cases for Exercise 2
+    // Exercise 2
     // 1. Display transaction history of acc1.
     acc1.getTransactionHistory();
     // 2. Create a Bank Account Manager
-    // BankAccountManager accM1 = new BankAccountManager();
+    BankAccountManager accM1 = new BankAccountManager();
     // 3. Add acc1 under the Bank Account Manager
-    // accM1.addAccount(acc1);
+    accM1.addAccount(acc1);
     // 4. Create a new account under Bank Account Manager
-    // accM1.addAccount(new SavingsAccount("Test1"));
+    accM1.addAccount(new SavingsAccount("Test1"));
     // 5. List all the created account under Bank Account Manager
-    // accM1.listAccounts();
+    accM1.listAccounts();
   }
 }

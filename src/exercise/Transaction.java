@@ -2,16 +2,16 @@ package exercise;
 
 import java.time.LocalDateTime;
 
-/** Represents a transaction with an amount and timestamp. */
 public class Transaction {
   private String type;
   private double amount;
-  private LocalDateTime time_stamp;
+  private LocalDateTime timestamp;
 
+  // 
   public Transaction(String type, double amount) {
     this.type = type;
     this.amount = amount;
-    this.time_stamp = LocalDateTime.now();
+    this.timestamp = LocalDateTime.now();
   }
 
   public String toString() {
@@ -21,30 +21,18 @@ public class Transaction {
           Amount: %.2f
           Time Stamp: %s
         ]
-        """, type, amount, time_stamp);
+        """, type, amount, timestamp);
   }
 
   public String getType() {
     return type;
   }
 
-  public void setType(String type) {
-    this.type = type;
-  }
-
   public double getAmount() {
     return amount;
   }
 
-  public void setAmount(double amount) {
-    this.amount = amount;
-  }
-
-  public LocalDateTime getTime_stamp() {
-    return time_stamp;
-  }
-
-  public void setTime_stamp(LocalDateTime time_stamp) {
-    this.time_stamp = time_stamp;
+  public LocalDateTime getTimeStamp() {
+    return timestamp;
   }
 }

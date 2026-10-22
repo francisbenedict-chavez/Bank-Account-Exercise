@@ -9,8 +9,16 @@ public class SavingsAccount extends BankAccount {
     System.out.println("Account Owner: " + ownerName);
   }
 
-  /** Returns the name of the account owner. */
   public String getOwnerName() {
     return ownerName;
+  }
+
+  public String toString() {
+    return String.format("""
+        [
+          Account Name: %s
+          Balance: %.2f
+        ]
+        """, ownerName, getBalance());
   }
 }
