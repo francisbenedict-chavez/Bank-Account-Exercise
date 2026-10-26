@@ -17,4 +17,17 @@ public class SavingsAccount extends BankAccount {
   public String getOwnerName() {
     return ownerName;
   }
+
+  /**
+   * Returns a string representation of the savings account.
+   */
+  @Override
+  public String toString() {
+    return String.format("""
+        [
+          Account Name: %s
+          Balance: %.2f
+        ]
+        """, ownerName, getBalance());
+  }
 }
