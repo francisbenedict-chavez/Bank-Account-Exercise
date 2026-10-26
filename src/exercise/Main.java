@@ -1,8 +1,12 @@
 package exercise;
 
-/** Runs test cases for bank account operations. */
+/**
+ * Runs test cases for bank account operations.
+ */
 public class Main {
-  /** Runs test cases for bank account operations. */
+  /**
+   * Runs test cases for bank account operations.
+   */
   public static void main(String[] args) {
     // Test Cases
 

@@ -1,6 +1,8 @@
 package exercise;
 
-/** Represents a savings account and its owner. */
+/**
+ * Represents a savings account and its owner.
+ */
 public class SavingsAccount extends BankAccount {
   private String ownerName;
 
@@ -9,7 +11,9 @@ public class SavingsAccount extends BankAccount {
     System.out.println("Account Owner: " + ownerName);
   }
 
-  /** Returns the name of the account owner. */
+  /**
+   * Returns the name of the account owner.
+   */
   public String getOwnerName() {
     return ownerName;
   }
