@@ -4,13 +4,13 @@ package exercise.exceptions;
  * Exception thrown when an amount is invalid.
  */
 public class InvalidAmountException extends Exception {
-    private String message;
+  private String message;
 
-    public InvalidAmountException(String message) {
-        this.message = message;
-    }
+  public InvalidAmountException(String message) {
+    this.message = message;
+  }
 
-    public String getMessage() {
-        return this.message;
-    }
+  public String getMessage() {
+    return this.message;
+  }
 }

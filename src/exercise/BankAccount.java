@@ -1,6 +1,8 @@
 package exercise;
 
-import exercise.exceptions.*;
+import exercise.exceptions.AccountFrozenException;
+import exercise.exceptions.InsufficientFundsException;
+import exercise.exceptions.InvalidAmountException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -138,7 +140,7 @@ public class BankAccount {
     if (amount > balance) {
       try {
         throw new InsufficientFundsException(
-          String.format("Insufficient balance.\nCurrent balance:\n%.2f\n", balance));
+            String.format("Insufficient balance.\nCurrent balance:\n%.2f\n", balance));
       } catch (InsufficientFundsException e) {
         System.out.println(e.getMessage());
       }

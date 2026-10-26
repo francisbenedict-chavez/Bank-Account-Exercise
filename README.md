@@ -1,3 +1,13 @@
+# Java Exercise 3: Bank Account with Advanced Concepts
+
+## Requirements:
+- Define a new package exception where all the exception classes are created.
+- Throw specific exceptions for various conditions (e.g., insufficient funds, invalid withdrawal or deposit amounts). Handle multiple exceptions such as insufficient funds, invalid amount, and account frozen.
+- Use lambda expressions to filter and sort a list of transactions (e.g., sort all deposits, or filter transactions over a certain amount).
+- All of the classes must have Java Documentation and are checked with Check Style.
+- Before submission, your program should be tested thoroughly and is functional. You may refer to the next page for the test cases.
+
+
 # Java Exercise 2: Bank Account with Java Collections and Package
  
 ## Requirements:

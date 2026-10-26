@@ -61,7 +61,6 @@ public class Main {
     // 6. Filter transaction at or above a certain amount.
     accM1.filterTransactionsAtOrAbove(200, acc1.getTransactionHistory());
     // // 7. Sort transaction by amount.The top most has the lowest amount value.
-    System.out.println("Sort by Amount:");
     accM1.sortTransactionsByAmount(acc1.getTransactionHistory())
         .forEach(System.out::println);
   }
