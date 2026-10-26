@@ -43,5 +43,26 @@ public class Main {
     accM1.addAccount(new SavingsAccount("Test1"));
     // 5. List all the created account under Bank Account Manager
     accM1.listAccounts();
+
+    // Exercise 3
+    // 1. Deposit with negative amount
+    acc1.deposit(-500);
+    // 2. Deposit when account is frozen
+    acc1.freezeAccount();
+    acc1.deposit(11500);
+    // // 3. Withdraw with negative amount
+    acc1.unfreezeAccount();
+    acc1.withdraw(-100);
+    // // 4. Withdraw with insufficient funds
+    acc1.withdraw(1500);
+    // // 5. Withdraw when account is frozen
+    acc1.freezeAccount();
+    acc1.withdraw(500);
+    // 6. Filter transaction at or above a certain amount.
+    accM1.filterTransactionsAtOrAbove(200, acc1.getTransactionHistory());
+    // // 7. Sort transaction by amount.The top most has the lowest amount value.
+    System.out.println("Sort by Amount:");
+    accM1.sortTransactionsByAmount(acc1.getTransactionHistory())
+        .forEach(System.out::println);
   }
 }

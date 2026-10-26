@@ -1,5 +1,6 @@
 package exercise;
 
+import exercise.exceptions.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,11 +61,12 @@ public class BankAccount {
   /**
    * Prints the account's transaction history.
    */
-  public void getTransactionHistory() {
+  public List<Transaction> getTransactionHistory() {
     System.out.println("Transaction history:");
     for (Transaction transaction : transactionHistory) {
       System.out.println(transaction.toString());
     }
+    return transactionHistory;
   }
 
   /**
@@ -109,7 +111,11 @@ public class BankAccount {
    * Helper functions.
    */
   private void showAccountFrozenMessage() {
-    System.out.println("Account is FROZEN.\nUnable to transact.");
+    try {
+      throw new AccountFrozenException("Account is FROZEN.\nUnable to transact.");
+    } catch (AccountFrozenException e) {
+      System.out.println(e.getMessage());
+    }
   }
 
   private void showBalanceMessage() {
@@ -118,7 +124,11 @@ public class BankAccount {
 
   private boolean isValidAmount(double amount) {
     if (amount <= 0) {
-      System.out.println("Invalid amount. Must be greater than 0.");
+      try {
+        throw new InvalidAmountException("Invalid amount. Must be greater than 0.");
+      } catch (InvalidAmountException e) {
+        System.out.println(e.getMessage());
+      }
       return false;
     }
     return true;
@@ -126,7 +136,12 @@ public class BankAccount {
 
   private boolean hasSufficientBalance(double amount) {
     if (amount > balance) {
-      System.out.printf("Insufficient balance.\nCurrent balance:\n%.2f\n", balance);
+      try {
+        throw new InsufficientFundsException(
+          String.format("Insufficient balance.\nCurrent balance:\n%.2f\n", balance));
+      } catch (InsufficientFundsException e) {
+        System.out.println(e.getMessage());
+      }
       return false;
     }
     return true;

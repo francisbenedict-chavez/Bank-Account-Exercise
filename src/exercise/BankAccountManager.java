@@ -1,6 +1,7 @@
 package exercise;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -44,5 +45,23 @@ public class BankAccountManager implements Bank {
       System.out.println("Account ID: " + id);
       System.out.println(account.toString());
     });
+  }
+
+  /**
+   * Filters transactions in the provided list that are at or above the specified amount.
+   */
+  public List<Transaction> filterTransactionsAtOrAbove(double amount, List<Transaction> txList) {
+    return txList.stream()
+        .filter(tx -> tx.getAmount() >= amount)
+        .collect(java.util.stream.Collectors.toList());
+  }
+
+  /**
+   * Sorts transactions in the provided list by their amount in ascending order.
+   */
+  public List<Transaction> sortTransactionsByAmount(List<Transaction> txList) {
+    return txList.stream()
+        .sorted((tx1, tx2) -> Double.compare(tx1.getAmount(), tx2.getAmount()))
+        .collect(java.util.stream.Collectors.toList());
   }
 }

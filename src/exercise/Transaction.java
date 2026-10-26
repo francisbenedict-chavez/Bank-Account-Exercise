@@ -7,8 +7,8 @@ import java.time.format.DateTimeFormatter;
  * Represents a transaction with a type, amount, and timestamp.
  */
 public class Transaction {
-  private static final DateTimeFormatter TIMESTAMP_FORMAT = 
-    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+  private static final DateTimeFormatter TIMESTAMP_FORMAT =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
   private String type;
   private double amount;
