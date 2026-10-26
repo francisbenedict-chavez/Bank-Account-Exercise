@@ -1,6 +1,8 @@
 package exercise;
 
-/** Defines operations for managing bank accounts. */
+/**
+ * Defines operations for managing bank accounts.
+ */
 public interface Bank {
   public void addAccount(BankAccount account);
 

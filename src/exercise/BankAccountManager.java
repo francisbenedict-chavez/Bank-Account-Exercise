@@ -3,12 +3,16 @@ package exercise;
 import java.util.HashMap;
 import java.util.Map;
 
-/** Manages bank accounts. */
+/**
+ * Manages bank accounts.
+ */
 public class BankAccountManager implements Bank {
   private Map<Integer, BankAccount> accounts;
   private int id;
 
-  /** Creates a manager with no accounts and initializes account IDs at zero. */
+  /**
+   * Creates a manager with no accounts and initializes account IDs at zero.
+   */
   public BankAccountManager() {
     this.accounts = new HashMap<>();
     this.id = 0;
@@ -21,7 +25,9 @@ public class BankAccountManager implements Bank {
     id++;
   }
 
-  @Override
+  /**
+   * Retrieves the account associated with the specified account number.
+   */
   public BankAccount getAccount(int accountNumber) {
     if (!accounts.containsKey(accountNumber)) {
       System.out.println("Account doesn't exist.");
@@ -30,7 +36,9 @@ public class BankAccountManager implements Bank {
     return accounts.get(accountNumber);
   }
 
-  /** Prints the IDs and details of all managed accounts. */
+  /**
+   * Prints the IDs and details of all managed accounts.
+   */
   public void listAccounts() {
     accounts.forEach((id, account) -> {
       System.out.println("Account ID: " + id);

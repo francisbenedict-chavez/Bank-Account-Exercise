@@ -3,20 +3,29 @@ package exercise;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a bank account supporting deposits, withdrawals, transaction
+ * histories, and freezing.
+ */
 public class BankAccount {
   private double balance;
   private boolean isFrozen;
   private List<Transaction> transactionHistory;
 
+  /**
+   * Creates an unfrozen account with a zero balance.
+   */
   public BankAccount() {
     this.balance = 0;
     this.isFrozen = false;
     this.transactionHistory = new ArrayList<>();
   }
 
-  /** Deposits a positive amount unless the account is frozen. */
+  /**
+   * Deposits a positive amount unless the account is frozen.
+   */
   public void deposit(double amount) {
-    if (isFrozen) {
+    if (isFrozen()) {
       showAccountFrozenMessage();
       return;
     }
@@ -30,9 +39,11 @@ public class BankAccount {
     }
   }
 
-  /** Withdraws a positive amount when the account has sufficient funds. */
+  /**
+   * Withdraws a positive amount when the account has sufficient funds.
+   */
   public void withdraw(double amount) {
-    if (isFrozen) {
+    if (isFrozen()) {
       showAccountFrozenMessage();
       return;
     }
@@ -46,7 +57,9 @@ public class BankAccount {
     }
   }
 
-  /** Prints the account's transaction history. */
+  /**
+   * Prints the account's transaction history.
+   */
   public void getTransactionHistory() {
     System.out.println("Transaction history:");
     for (Transaction transaction : transactionHistory) {
@@ -54,14 +67,18 @@ public class BankAccount {
     }
   }
 
-  /** Returns the current account balance. */
+  /**
+   * Returns the current account balance.
+   */
   public double getBalance() {
     return balance;
   }
 
-  /** Freezes the account to prevent transactions. */
+  /**
+   * Freezes the account to prevent transactions.
+   */
   public void freezeAccount() {
-    if (isFrozen) {
+    if (isFrozen()) {
       System.out.println("Account is ALREADY FROZEN.");
       return;
     }
@@ -69,9 +86,11 @@ public class BankAccount {
     isFrozen = true;
   }
 
-  /** Unfreezes the account to allow transactions. */
+  /**
+   * Unfreezes the account to allow transactions.
+   */
   public void unfreezeAccount() {
-    if (!isFrozen) {
+    if (!isFrozen()) {
       System.out.println("Account is ALREADY UNFROZEN.");
       return;
     }
@@ -79,12 +98,16 @@ public class BankAccount {
     isFrozen = false;
   }
 
-  /** Returns whether the account is frozen. */
+  /**
+   * Returns whether the account is frozen.
+   */
   public boolean isFrozen() {
     return isFrozen;
   }
 
-  // Helper functions
+  /**
+   * Helper functions.
+   */
   private void showAccountFrozenMessage() {
     System.out.println("Account is FROZEN.\nUnable to transact.");
   }
