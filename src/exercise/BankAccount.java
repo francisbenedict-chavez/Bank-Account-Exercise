@@ -33,7 +33,7 @@ public class BankAccount {
       return;
     }
 
-    System.out.printf("Amount deposited:\n%.2f\n", amount);
+    System.out.printf("Amount deposited: %.2f\n", amount);
 
     if (isValidAmount(amount)) {
       balance = balance + amount;
@@ -51,7 +51,7 @@ public class BankAccount {
       return;
     }
 
-    System.out.printf("Amount withdrawn:\n%.2f\n", amount);
+    System.out.printf("Amount withdrawn: %.2f\n", amount);
 
     if (isValidAmount(amount) && hasSufficientBalance(amount)) {
       balance = balance - amount;
@@ -110,20 +110,22 @@ public class BankAccount {
    */
   private void showAccountFrozenMessage() {
     try {
-      throw new AccountFrozenException("Account is FROZEN.\nUnable to transact.");
+      throw new AccountFrozenException(
+          "Account is FROZEN. Unable to transact.");
     } catch (AccountFrozenException e) {
       System.out.println(e.getMessage());
     }
   }
 
   private void showBalanceMessage() {
-    System.out.printf("Current balance:\n%.2f\n", balance);
+    System.out.printf("Current balance: %.2f\n", balance);
   }
 
   private boolean isValidAmount(double amount) {
     if (amount <= 0) {
       try {
-        throw new InvalidAmountException("Invalid amount. Must be greater than 0.");
+        throw new InvalidAmountException(
+            "Invalid amount. Must be greater than 0.");
       } catch (InvalidAmountException e) {
         System.out.println(e.getMessage());
       }
@@ -136,7 +138,8 @@ public class BankAccount {
     if (amount > balance) {
       try {
         throw new InsufficientFundsException(
-            String.format("Insufficient balance.\nCurrent balance:\n%.2f\n", balance));
+            String.format(
+                "Insufficient balance.\nCurrent balance: %.2f ", balance));
       } catch (InsufficientFundsException e) {
         System.out.println(e.getMessage());
       }

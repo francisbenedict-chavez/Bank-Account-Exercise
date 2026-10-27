@@ -27,7 +27,6 @@ public class SavingsAccount extends BankAccount {
         [
           Account Name: %s
           Balance: %.2f
-        ]
-        """, ownerName, getBalance());
+        ]""", ownerName, getBalance());
   }
 }

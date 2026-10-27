@@ -32,8 +32,7 @@ public class Transaction {
           Type: %s
           Amount: %.2f
           Time Stamp: %s
-        ]
-        """, getType(), getAmount(), getTimeStamp().format(TIMESTAMP_FORMAT));
+        ]""", getType(), getAmount(), getTimeStamp().format(TIMESTAMP_FORMAT));
   }
 
   public String getType() {
