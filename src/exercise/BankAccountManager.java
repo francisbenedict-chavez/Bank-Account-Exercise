@@ -48,9 +48,11 @@ public class BankAccountManager implements Bank {
   }
 
   /**
-   * Filters transactions in the provided list that are at or above the specified amount.
+   * Filters transactions in the provided list that are at or above the specified
+   * amount.
    */
   public List<Transaction> filterTransactionsAtOrAbove(double amount, List<Transaction> txList) {
+    System.out.println("Filtering transactions at or above " + amount + "...");
     return txList.stream()
         .filter(tx -> tx.getAmount() >= amount)
         .collect(java.util.stream.Collectors.toList());
@@ -60,6 +62,7 @@ public class BankAccountManager implements Bank {
    * Sorts transactions in the provided list by their amount in ascending order.
    */
   public List<Transaction> sortTransactionsByAmount(List<Transaction> txList) {
+    System.out.println("Sorting transactions by amount...");
     return txList.stream()
         .sorted((tx1, tx2) -> Double.compare(tx1.getAmount(), tx2.getAmount()))
         .collect(java.util.stream.Collectors.toList());
